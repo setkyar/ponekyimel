@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $fb = App::make('SammyK\LaravelFacebookSdk\LaravelFacebookSdk');
+    $accessToken = config('laravel-facebook-sdk.facebook_config')['app_id'] . '|' . config('laravel-facebook-sdk.facebook_config')['app_secret'];
+
+    try {
+        $response = $fb->get('212390098842654/photos?fields=images&type=uploaded&limit=25', $accessToken)->getDecodedBody();
+        
+        return $response;
+
+    } catch (Facebook\Exceptions\FacebookSDKException $e) {
+        dd($e->getMessage());
+    }
+    
 });
