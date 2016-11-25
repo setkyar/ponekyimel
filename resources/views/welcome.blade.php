@@ -5,7 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Pone Kyi Mel</title>
+        
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -20,76 +22,65 @@
                 height: 100vh;
                 margin: 0;
             }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            .container {
+                margin-top: 20px;
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>Pone Kyi Mel</h1>
                 </div>
             </div>
+            <div class="row">
+                @if(isset($error))
+                <div class="col-md-12">
+                    <div class="alert alert-danger">
+                        {{ $error }}
+                    </div>
+                </div>
+                @endif
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="post" action="/" class="text-center">
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
+                        <div class="form-group">
+                            <input type="page_name" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name">
+                        </div>
+                        <button type="submit" class="btn btn-default">Pone Kyi Mel</button>
+                    </form>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                @if(isset($images))
+                    @foreach($images['data'] as $image)
+                    <div class="col-md-10 col-md-offset-1">
+                        <img src="{{ $image['images'][0]['source'] }}" alt="Pone Kyi Mel" class="img-responsive" style="width: 100%">
+                    </div>
+                    @endforeach
+                    
+                    <div class="col-md-12">
+                        <ul class="pager">
+                            @if(isset($images['paging']['previous']))
+                                <li><a href="?page={{ $page }}&paging_before={{ $images['paging']['cursors']['before'] }}">Before</a></li>
+                            @endif
+                            @if(isset($images['paging']['next']))
+                                <li><a href="/?page={{ $page }}&paging_after={{ $images['paging']['cursors']['after'] }}">Next</a></li>
+                            @endif
+                        </ul>
+                    </div>
+
+                @endif
+            </div>
         </div>
+    
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
