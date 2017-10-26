@@ -28,7 +28,8 @@
                 margin-top: 20px;
             }
             .mmfont {
-                font-family:'Masterpiece Uni Sans',Yunghkio,Myanmar3; 
+                font-family:'Masterpiece Uni Sans',Yunghkio,Myanmar3;
+                line-height: 1.5em;
             }
         </style>
     </head>
