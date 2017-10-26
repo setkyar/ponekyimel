@@ -58,6 +58,7 @@
                         </div>
                         <button type="submit" class="btn btn-default">Let me see 😜</button>
                     </form>
+                    <br/>
                 </div>
             </div>
             <div class="row">
@@ -82,6 +83,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Let me see Lu Lu Aung's Photos 😜</button>
                     </form>
+                    <br/>
                 </div>
                 <div class="col-md-3">
                     <form method="post" action="/" class="text-center">
@@ -91,6 +93,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Let me see Mary's Photos 😜</button>
                     </form>
+                    <br/>
                 </div>
                 <div class="col-md-3">
                     <form method="post" action="/" class="text-center">
@@ -100,6 +103,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Let me see Sai Sai Kham Leng's Photos 😜</button>
                     </form>
+                    <br/>
                 </div>
                 <div class="col-md-3">
                     <form method="post" action="/" class="text-center">
@@ -109,6 +113,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Let me see Shwe Htoo's Photos 😜</button>
                     </form>
+                    <br/>
                 </div>
             </div>
             @endif
