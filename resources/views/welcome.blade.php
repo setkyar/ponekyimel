@@ -6,6 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Pone Kyi Mel</title>
+
+        <meta property="og:url"                content="https://www.ponekyimel.com/" />
+        <meta property="og:type"               content="article" />
+        <meta property="og:title"              content="See only images from Facebebook Page" />
+        <meta property="og:description"        content="I just want to see images only from Facebebook Page, but how? Here we go!" />
+        <meta property="og:image"              content="https://www.ponekyimel.com/img/cover.jpg" />
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
