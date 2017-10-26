@@ -105,7 +105,7 @@
                         <div class="form-group" style="display: none">
                             <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true" value="saisaifanpage">
                         </div>
-                        <button type="submit" class="btn btn-primary">Let me see Sai Sai Kham Leng's Photos 😜</button>
+                        <button type="submit" class="btn btn-primary">Let me see Sai Sai's Photos 😜</button>
                     </form>
                     <br/>
                 </div>
