@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -57,22 +58,34 @@ class PagesController extends Controller
      **/
     public function getImagesFromFacebook(Request $request)
     {
+    	$page = $this->GetUserIDFromUsername($request->page);
+
     	$data = $request->all();
 
 	    try {
-	    	$images = $this->fb->get($data['page'] . '/photos?fields=images&type=uploaded&limit=25', $this->accessToken)->getDecodedBody();
+	    	$images = $this->fb->get($page . '/photos?fields=images&type=uploaded&limit=25', $this->accessToken)->getDecodedBody();
 	    } catch (Facebook\Exceptions\FacebookResponseException $e) {
-		    $graphError = $e->getPrevious();
-		    echo 'Graph API Error: ' . $e->getMessage();
-		    echo ', Graph error code: ' . $graphError->getCode();
-		    exit;
+		    return view('errors.error');
 		} catch (Facebook\Exceptions\FacebookSDKException $e) {
-		    echo 'SDK Error: ' . $e->getMessage();
-		    exit;
+		    return view('errors.error');
 		}
 		
-		$page = $data['page'];
+		$page = $page;
 
 	    return view('welcome', compact('images', 'page'));
     }
+
+    public function GetUserIDFromUsername($username) {
+	    // For some reason, changing the user agent does expose the user's UID
+	    $options  = array('http' => array('user_agent' => 'some_obscure_browser'));
+	    $context  = stream_context_create($options);
+	    $fbsite = file_get_contents('https://www.facebook.com/' . $username, false, $context);
+
+	    // ID is exposed in some piece of JS code, so we'll just extract it
+	    $fbIDPattern = '/\"entity_id\":\"(\d+)\"/';
+	    if (!preg_match($fbIDPattern, $fbsite, $matches)) {
+	        throw new Exception('Unofficial API is broken or user not found');
+	    }
+	    return $matches[1];
+	}
 }

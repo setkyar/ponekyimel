@@ -10,12 +10,14 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="//fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <style>
+            @import  url('https://mmwebfonts.comquas.com/fonts/?font=masterpiece');
+
             html, body {
-                background-color: #fff;
+                background-color: #f2efef;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -25,13 +27,16 @@
             .container {
                 margin-top: 20px;
             }
+            .mmfont {
+                font-family:'Masterpiece Uni Sans',Yunghkio,Myanmar3; 
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1>Pone Kyi Mel</h1>
+                    <a href="/"><h1>Pone Kyi Mel</h1></a>
                 </div>
             </div>
             <div class="row">
@@ -45,23 +50,78 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4 col-md-offset-4">
                     <form method="post" action="/" class="text-center">
                         <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
                         <div class="form-group">
-                            <input type="page_name" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name">
+                            <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true">
                         </div>
-                        <button type="submit" class="btn btn-default">Pone Kyi Mel</button>
+                        <button type="submit" class="btn btn-default">Let me see 😜</button>
                     </form>
-                    <hr>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                    <h5 class="mmfont text-center">
+                        အသုံးပြုနည်း - Facebebook Page username ကို Page မှရယူပြီး input box မှာထည့်ပါ။ပြီးလျှင် Facebook Page Name ဆိုသော input box မှာထည့်ပြီး Let me see 😜 ဆိုတဲ့ button ကိုနှိပ်လိုက်ပါ။
+                    </h5>
+                </div>
+            </div>
+            
+            @if(!isset($images))
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+                <div class="col-md-3">
+                    <form method="post" action="/" class="text-center">
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
+                        <div class="form-group" style="display: none">
+                            <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true" value="212390098842654">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Let me see Lu Lu Aung's Photos 😜</button>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <form method="post" action="/" class="text-center">
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
+                        <div class="form-group" style="display: none">
+                            <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true" value="yrameos">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Let me see Mary's Photos 😜</button>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <form method="post" action="/" class="text-center">
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
+                        <div class="form-group" style="display: none">
+                            <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true" value="saisaifanpage">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Let me see Sai Sai Kham Leng's Photos 😜</button>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <form method="post" action="/" class="text-center">
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
+                        <div class="form-group" style="display: none">
+                            <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true" value="147558671927485">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Let me see Shwe Htoo's Photos 😜</button>
+                    </form>
+                </div>
+            </div>
+            @endif
 
             <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
                 @if(isset($images))
                     @foreach($images['data'] as $image)
-                    <div class="col-md-10 col-md-offset-1">
+                    <div class="col-md-5 col-md-offset-1">
                         <img src="{{ $image['images'][0]['source'] }}" alt="Pone Kyi Mel" class="img-responsive" style="width: 100%">
+                        <br/>
                     </div>
                     @endforeach
                     
