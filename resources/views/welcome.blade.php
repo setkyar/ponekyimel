@@ -31,6 +31,9 @@
                 font-family:'Masterpiece Uni Sans',Yunghkio,Myanmar3;
                 line-height: 1.5em;
             }
+            button {
+                width: 100%;
+            }
         </style>
     </head>
     <body>
