@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\WatchYou;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -59,6 +60,8 @@ class PagesController extends Controller
     public function getImagesFromFacebook(Request $request)
     {
     	$page = $this->GetUserIDFromUsername($request->page);
+
+    	WatchYou::create(['page_name' => $page]);
 
     	$data = $request->all();
 
