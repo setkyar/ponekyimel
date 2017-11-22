@@ -63,7 +63,7 @@ class PagesController extends Controller
     		$page = $this->GetUserIDFromUsername($request->page);	
     	}
 
-    	// WatchYou::create(['page_name' => $page]);
+    	WatchYou::create(['page_name' => $page]);
 
 	    try {
 	    	$images = $this->fb->get($page . '/photos?fields=images&type=uploaded&limit=25', $this->accessToken)->getDecodedBody();
