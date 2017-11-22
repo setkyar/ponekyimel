@@ -57,13 +57,13 @@ class PagesController extends Controller
      * @return mix
      * @author Set Kyar Wa Lar <setkyar16@gmail.com>
      **/
-    public function getImagesFromFacebook(Request $request)
+    public function getImagesFromFacebook(Request $request, $page=false)
     {
-    	$page = $this->GetUserIDFromUsername($request->page);
+    	if (!$page) {
+    		$page = $this->GetUserIDFromUsername($request->page);	
+    	}
 
-    	WatchYou::create(['page_name' => $page]);
-
-    	$data = $request->all();
+    	// WatchYou::create(['page_name' => $page]);
 
 	    try {
 	    	$images = $this->fb->get($page . '/photos?fields=images&type=uploaded&limit=25', $this->accessToken)->getDecodedBody();
@@ -72,8 +72,6 @@ class PagesController extends Controller
 		} catch (Facebook\Exceptions\FacebookSDKException $e) {
 		    return view('errors.error');
 		}
-		
-		$page = $page;
 
 	    return view('welcome', compact('images', 'page'));
     }

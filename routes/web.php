@@ -13,3 +13,4 @@
 
 Route::get('/', 'PagesController@welcome');
 Route::post('/', 'PagesController@getImagesFromFacebook');
+Route::get('/{page}', 'PagesController@getImagesFromFacebook');

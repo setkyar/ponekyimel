@@ -64,7 +64,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <a href="/"><h1>Pone Kyi Mel</h1></a>
+                    <a href="/" style="text-decoration: none"><h1 class="mmfont">ပုံကြည့်မယ်</h1></a>
                 </div>
             </div>
             <div class="row">
@@ -84,7 +84,7 @@
                         <div class="form-group">
                             <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true">
                         </div>
-                        <button type="submit" class="btn btn-default">Let me see 😜</button>
+                        <button type="submit" class="btn btn-default mmfont">ပုံကြည့်မယ်</button>
                     </form>
                     <br/>
                 </div>
@@ -104,44 +104,16 @@
                     <hr>
                 </div>
                 <div class="col-md-3">
-                    <form method="post" action="/" class="text-center">
-                        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
-                        <div class="form-group" style="display: none">
-                            <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true" value="212390098842654">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Let me see Lu Lu Aung's Photos 😜</button>
-                    </form>
-                    <br/>
+                    <a href="/hotvietnamgirls" class="btn btn-primary mmfont">Vietnam Hot Girls ပုံကြည့်မယ်</a>
                 </div>
                 <div class="col-md-3">
-                    <form method="post" action="/" class="text-center">
-                        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
-                        <div class="form-group" style="display: none">
-                            <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true" value="yrameos">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Let me see Mary's Photos 😜</button>
-                    </form>
-                    <br/>
+                    <a href="/212390098842654" class="btn btn-primary mmfont">Lu Lu Aung ပုံကြည့်မယ်</a>
                 </div>
                 <div class="col-md-3">
-                    <form method="post" action="/" class="text-center">
-                        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
-                        <div class="form-group" style="display: none">
-                            <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true" value="saisaifanpage">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Let me see Sai Sai's Photos 😜</button>
-                    </form>
-                    <br/>
+                    <a href="/cupcmagazine" class="btn btn-primary mmfont">Cup C ပုံကြည့်မယ်</a>
                 </div>
                 <div class="col-md-3">
-                    <form method="post" action="/" class="text-center">
-                        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
-                        <div class="form-group" style="display: none">
-                            <input type="search" name="page" class="form-control" id="page_name" placeholder="Facebook Page Name" required="true" value="147558671927485">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Let me see Shwe Htoo's Photos 😜</button>
-                    </form>
-                    <br/>
+                    <a href="/cupemag" class="btn btn-primary mmfont">Cup E ပုံကြည့်မယ်</a>
                 </div>
             </div>
             @endif
